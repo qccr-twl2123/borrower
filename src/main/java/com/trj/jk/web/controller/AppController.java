@@ -19,6 +19,7 @@ import java.util.Map;
 public class AppController extends BaseController{
 
 
+
     @Autowired
     private IAppVersionService appVersionService;
 
