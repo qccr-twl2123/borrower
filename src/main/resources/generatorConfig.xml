@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+	<context id="jkweb" targetRuntime="MyBatis3">
+
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$" />
+			<property name="replaceString" value="Criteria" />
+		</plugin>
+		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+		<plugin type="com.trj.mybatis.generator.MapperClassPlugin">
+		</plugin>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.10.80:3306/jkweb" userId="root"
+			password="tourongjia123!">
+		</jdbcConnection>
+
+		<javaModelGenerator targetPackage="com.trj.jk.web.domain"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="false" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.trj.jk.web.mapper"
+			targetProject="src/main/resources">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+	
+		<javaClientGenerator targetPackage="com.trj.jk.web.mapper"
+			type="XMLMAPPER" targetProject="src/main/java">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+
+		<!---->
+		<!--<table tableName="jk_loan_apply_address" domainObjectName="LoanApplyAddress">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_loan_audit" domainObjectName="LoanAudit">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_loan_face_auth" domainObjectName="LoanFaceAuth">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_loan_repay_general" domainObjectName="LoanRepayGeneral">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_loan_repay_plan" domainObjectName="LoanRepayPlan">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_loan_repay_record" domainObjectName="LoanRepayRecord">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_thirdparty_request_response_log" domainObjectName="ThirdpartyRequestResponseLog">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_user_activity" domainObjectName="UserActivity">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_user_bank_card" domainObjectName="UserBankCard">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_user_basic" domainObjectName="UserBasic">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+			<!--<ignoreColumn column="type"/>-->
+		<!--</table>-->
+		<!--<table tableName="jk_user_car" domainObjectName="UserCar">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_user_certfication" domainObjectName="UserCertfication">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_user_contacts" domainObjectName="UserContacts">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_user_ecommence" domainObjectName="UserEcommence">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_user_ext" domainObjectName="UserExt">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_user_house" domainObjectName="UserHouse">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_user_profession" domainObjectName="UserProfession">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_attachment" domainObjectName="Attachment">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_loan_product" domainObjectName="LoanProduct">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_city" domainObjectName="City">-->
+			<!--<generatedKey column="code" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_province" domainObjectName="Province">-->
+			<!--<generatedKey column="code" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_code" domainObjectName="Code">-->
+			<!--<generatedKey column="ID" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_loan_limit" domainObjectName="LoanLimit">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_ref_geocode" domainObjectName="RefGeocode">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_loan_apply_contacts" domainObjectName="LoanApplyContacts">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_loan_apply_profession" domainObjectName="LoanApplyProfession">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_banner" domainObjectName="Banner">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_mobile_location_interval" domainObjectName="MobileLocationInterval">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+
+		<!--<table tableName="jk_token" domainObjectName="Token">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_loan_apply_car" domainObjectName="LoanApplyCar">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<!--<table tableName="jk_invoke_log" domainObjectName="InvokeLog">-->
+			<!--<generatedKey column="id" sqlStatement="JDBC" />-->
+		<!--</table>-->
+		<table tableName="jk_loan_limit_insurance" domainObjectName="LoanLimitInsurance">
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+	</context>
+</generatorConfiguration>

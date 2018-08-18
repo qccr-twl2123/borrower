@@ -1,0 +1,142 @@
+server:
+    url: https://testjkweb.tourongjia.com
+spring:
+  aop:
+      auto: true
+      proxy-target-class: false
+  redis:
+    host: 192.168.10.80
+    database: 1
+    password: tourongjia123
+  http:
+    multipart:
+      max-file-size: 4000KB
+      max-request-size: 40000KB
+  datasource:
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    validationQuery: SELECT 1
+  activemq:
+    brokerUrl: tcp://192.168.10.161:61616
+mybatis:
+  config-location: classpath:mybatis-config.xml
+app:
+  config:
+    security:
+      defaultPassword: 0a7c07f5be907e6165f2b0fa827be0c8f2898f98377ea8a410fed9236175f4f8
+      exclude: /applyLoan/getLoanApplyScrollingMessage,/escrow/successUrl,/escrow/confirm,/outRegister/*,/app/*,/hello,/fooUserInfo,/login/*,/product/*,/authentication/selectCity*,/user/password/check*,/da/*Info,/goods/*,/order/*,/identity/*,/identity/verifyCode/verify,/attachment/uploadFromTrj,/card/bind/requestFromTrj,/card/bind/confirmFromTrj,/freeContract/doInterestFreeSignature,/authentication/confirm*,/pkg,/callback/*,/authentication/social*,/identity/card/list
+  remote:
+    ddlc:
+      domain: http://120.24.220.186:8082
+    cloudwalk:
+      domain: https://service.cloudwalk.cn
+      secret: 784bc6464c0844af961de4d3b9a69cb2
+      appid: hztfphhlw
+      keyStorePath: keystore.keystore
+      trustStorePath: truststore.truststore
+      password: cloudwalk123456
+      score: 0.70
+      idcardScore: 0.70
+    domain:
+      crm: https://escrowcrm1.tourongjia.com
+      contractPublishUrl: /jkWebService/jkWebService_jkWebDoContractPublish.jhtml
+      esOpenAccountUrl: /jkWebService/jkWebService_jkWebEsOpenAccount.jhtml
+      generateContractAndSignAccreditUrl: /jkWebService/jkWebService_jkWebGenerateContractAndSignAccredit.jhtml
+      interestFreeGenerateContract: /jkWebService/jkWebService_interestFreeGenerateContractAndSignAccredit.jhtml
+      signatureAccreditUrl: /jkWebService/jkWebService_signatureAccredit.jhtml
+      updateEsAccountContactUrl: /jkWebService/jkWebService_updateEsAccountContact.jhtml
+      auditService: /loan/bpm/task_startProcess.jhtml  
+      message: https://testmessage.tourongjia.com
+      referralCode: /jkWebService/jkWebService_checkReferralCode.jhtml
+  datasource:
+    jkweb:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.168.10.80:3306/jkweb?useSSL=false    
+      username: root
+      password: tourongjia123!
+      testOnBorrow: true
+      testWhileIdle: true
+      validationQuery: select 1
+    tourongjia:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.168.10.80:3306/tourongjia?useSSL=false    
+      username: root
+      password: tourongjia123!
+      testOnBorrow: true
+      testWhileIdle: true
+      validationQuery: select 1      
+    changfudai:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.168.10.80:3306/changfudai?useSSL=false    
+      username: root
+      password: tourongjia123!
+      testOnBorrow: true
+      testWhileIdle: true
+      validationQuery: select 1
+    trbs:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.168.10.80:3306/trbs?useSSL=false    
+      username: root
+      password: tourongjia123!
+      testOnBorrow: true
+      testWhileIdle: true
+      validationQuery: select 1
+  soopay:
+    url: http://pay.soopay.net/spay/pay/payservice.do
+    merid: 3860
+    platform: soopay
+    expire: 1440
+    sign:
+      type: RSA
+      charset: UTF-8
+      version: 4.0
+      format: HTML
+      media: MOBILE
+  attach:
+    path: /opt/attach/
+  upload:
+    path: /opt/upload
+    url: https://testjkimg.tourongjia.com/fileUpload
+    download: https://testjkimg.tourongjia.com/download/
+  service:
+    path: http://192.168.10.166/cfd_v1/
+    pathDss: http://192.168.10.141:8080/dss-api/
+    cfdCms:
+      domain: https://testjkcms.tourongjia.com/
+      appKey: cea433215f4c465f83cc4c7cfbfd2e7d
+      appSecret: d04300eb0bd449ccb5b370cd873672fd
+  task:
+    autoTaskIp: 172.16.30.207
+    cron:
+      PrintTask: 0/5 * * * * ?
+  thread:
+    pool:
+      corePoolSize: 20
+      maxPoolSize: 3000
+  alipay:
+    url: https://openapi.alipay.com/gateway.do
+    appId: 2017011905226071
+    privateKey: xxx
+    publicKey: xxx
+    productCode: mcmcm
+    admittanceScore: 650    
+  fraud:
+    baiqishi:
+      domain: https://api.baiqishi.com
+      partnerId: trj
+      verifyKey: d1d2399f0b304ccebf2da730710460f3
+      appId: cfd
+  pkg:
+    url: 
+      android: http://a.app.qq.com/o/simple.jsp?pkgname=com.trj.jk
+      ios: https://itunes.apple.com/cn/app/%E9%95%BF%E5%AF%8C%E8%B4%B7-%E6%9E%81%E9%80%9F%E9%AB%98%E9%A2%9D%E7%9A%84%E6%89%8B%E6%9C%BA%E8%B4%B7%E6%AC%BEapp/id1249947480?mt=8 
+  file:
+    tmp:
+      path: /opt/image/tmp
+insurance:
+    user_name: test
+    password: test
+    product_code: 3225010001
+    policy_req_url: http://47.100.12.242:8080/ibis/api/transaction/policyReq
+    public_key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwUDxNUYjOdCdFEgDPV5TxMfSMZWOKX2OSPLPAfuHRspZVtA7i/2piCM4Q0g8IcpyTaIZ7w+9CF+rCQebeg+I48f6PFu8HpEmL6Mkm2ks5iZf71k3aKv15Xhbjv0u4LNV9iHFy8ylvJmAG2C83byrQU9qrJuYokEnh2B/gIV9Rp/xDTfs/6rIMVkt4jb9G6G7HECMhscOVHCQC1jNifBgATlm256/gvCLykGFE7U2nZN5h3AFQZ0mDeRbQoKsLzYXWwF7tesIIRmn55zJEKOE0Zab4xwhGAW2kunMQiEPxLOmgb4PtWfQc+HT8OOCUDD1CoLuSDvRnv9DQ3/39yiP3wIDAQAB
+    private_key: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDTMfNm/yTHnQv2WovU1S19T/fvmlaYVR6R72HIWYegBjm7cYITR/LAorQ2bEPItjOiGuyMCEUHU+IsYKq2h7mYWAUhRN0z/LQlrNXcHGNdUDdwpzIj/N6y43X8+s9c/gNyomZGgG/5NzcVwyUMnqA5H3ZsQPh2aQz3rU1VRiP9lNnwn80MClZ8UpURJ9/CH2iFJpnSWjzEg5nZSh+W77Yoje+tJE2ZAnDFBuOmLazNFOYIubNUbscigLpXDyT25ZILjIy1iv2yCvrChg8R0RWc0RHhJz1puTo0gmey/+av7L0v+kTV/og6SenxV/DGqkpw0A0QMLnkVqxy+6CQbj0/AgMBAAECggEAYumUG/sHWM3+2kSSFP46reQUNQ3N3M6Q4LyCyXjVAmeoBlglGa6qzPnm+U4/ePOMvzFo9DSzT7lDxpEHozFyBR3EWU6NY1nJbZPDHbHV/9AgBwzneN9n1dSeX/t/vwfgyYGx8PcaelgX3oNlCMIKPHa12gGb3Klav21VOMj+9jY05OKyr2RnZDN/cdjFSqijKmEJAaUyS2gbK9nRNklD7qX70W/IqRqdpDg+yunPi4YtxLaHTdyuccVA/HRU0q6dvBY46YlGqaJ0aSP3KnhFSPbw7HgSYBYbnapqmg3ngtUcu8ihjtVYzouhz8hpdLougb7nBQgpxWfMBbxl8Mx8kQKBgQDwwg6lvFi2OO4oJRWEOFWs2chYy5IVO9Vw+omnJdWlYYoltNVZY65qLmoVAP1xV+yUsLy3gssuUKxq33wFVkbMO/W+yOnYQNjAZDInx2Jh9kTGAm6UGTCTH0stG7+1rtAUUCqM5u7CuhvgsHBdTsPOTmiWAeSVQo+B52e9r/8iSwKBgQDgkMUq9rFaRACG92El6g2s5f/c0cB/mnmxmlXwKK/Bz7CDu2S8/M2Wza0++w5ZieTd1qjcwYrOhysteV2AN6cXyoS7E7pIVK3urKhWzFSU6g2j3bZRrCQA2BSUpX3uPd/2P7swn6/X4kJZsXKu9yk7KdC7Kf6N11w6/xJppb9YXQKBgGyAGBfLBPPCPlorNEItHTdTwn156LDXET7kOerxGxJ4HckWcNvjF3RUzIwAsTdGV6E+8R2GvUh3JOzZIMxK8IcUMpCzfOdvef9iaFQTAByD3sSZzfnCTGjRPpDqo4AecznkUvjDDjEFrJCbE1iJqaatIWcRHVHC+GejwNX0nfd3AoGAeijmyQdn1QW3D7SUyW44QDzh4frMb93Vo3Kkmz9W1OSpTg/rrg8Lu6RpQSCLXtPvh2oVc/lpDA5lw5gI8A3WPM/zQl1p8Zz2/SY5cPY4cMWd4+1hF66/6yGgmHgqOCa6pZdnufy0SIkRtP8dtuZHLKMDpD0k934W8xT8rDH5FBUCgYAzTs0KxpB24O2e4A5WORljNcrd1mAjRSxyqorqMTocNkmu1PwMEY1bfVpmiVulp3LjYxRI5LRoclFe+0QQUspSY0gLX8GBNIMIUUk+szm6cAN5xBpA3s0MT3ufRtbjOzjoXiiwLkkHEwCBX79kDVCch3LLyowY6nbv5q0AwPohZQ==

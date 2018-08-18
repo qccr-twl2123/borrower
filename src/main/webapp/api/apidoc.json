@@ -1,0 +1,38 @@
+{
+  "name": "cfd-serve",
+  "version": "1.0.0",
+  "description": "CFD服务",
+  "title": "CFD服务",
+  "url" : "https://testjkweb.tourongjia.com/",
+  "header": {
+    "title": "概述",
+    "filename": "header.md"
+  },
+  "footer": {
+    "title": "代号定义",
+    "filename": "footer.md"
+  },
+  "order": [
+  	"OAuth2",
+  	"getAccessToken",
+  	
+  	"isBlacklist",
+  	"applyAdd",
+  	"applyFinish",
+    "getLimitAuditList",
+    "tryDoRepayAmount",
+    "signatureAccredit",
+    "doSignature",
+
+    "register",
+    "idCardOcr",
+    "identityAuthAndSave",
+    "livingBodyAuthAndSave",
+    "uploadImg"
+  ],
+  "template": {
+    "forceLanguage": "zh_cn",
+  	"withCompare": true,
+  	"withGenerator": true
+  }
+}
